@@ -22,45 +22,32 @@
     </div>
     <p class="spendings-capture">Поступления:</p>
     <div class="card">
-      <ul class="spendings-list">
-        <li>
-          <svg class="spendings-list__ind decrease" height="30" width="30">
-            <circle cx="15" cy="15" r="8"  fill="#f5625d" />
-          </svg>
-          <!-- <div class="spendings-list__comment">цель</div> -->
-          <div class="spendings-list__summa">12.0</div>
-        </li>
-        <li>
-          <svg class="spendings-list__ind increase" height="30" width="30">
-            <circle cx="15" cy="15" r="8"  fill="#f5625d" />
-          </svg>
-        <div class="spendings-list__comment">цель</div>
-        <div class="spendings-list__summa">12.0</div>
-          </li>
-        <li>sdf</li>
+      <ul class="spendings-list" id="list">
+       
       </ul>
     </div>
-    <div class="add_button"></div>
+    <div class="add_button" id="add_button"></div>
   </div>
-  <div class="form-bg">
+  <div class="form-bg hidden" id="form">
     <div class="wrapper">
       <div class="card form">
         <h3>Изменение суммы</h3>
-        <form action="">
-          <input type="number" placeholder="Сумма">
-          <input type="text" placeholder="Комментарий">
+        <form action="" id="formTag">
+          <input type="number" step="0.01" autofocus placeholder="Сумма" id="input-Am">
+          <input type="text" placeholder="Комментарий" id="input-Com">
           <div class="form__input_togler">
             <p>Добавление</p>
             <label class="switch">
-              <input type="checkbox">
+              <input type="checkbox" id="input-Change">
               <span class="slider round"></span>
             </label>
           </div>
-          <input type="submit" value="Добавить!">
+          <input type="submit" value="Добавить!" id="form_Submit">
         </form>
-        <div class="close_button"></div>
+        <div class="close_button" id="close_button"></div>
       </div>
     </div>
   </div>
+  <script src="./src/index.js" type="module"></script>
 </body>
 </html>
