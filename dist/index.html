@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="./favicon.png"/>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card aim-container" data-state="empty" id="aim">
+      <h2 id="stifle">Нажмите <span class="ico-span"></span> , чтобы добавить цель</h2>
+    </div>
+    <div class="resp-wrapper">
+      <p class="spendings-capture">Поступления:</p>
+      <div class="card">
+        <ul class="spendings-list" id="list">
+          <h2 id="n-stifle">Тут пока пусто. Нажмите <span class="ico-span"></span> , чтобы начать заполнять</h2>
+        </ul>
+      </div>
+    </div>
+    <div class="resp-wrapper">
+      <p class="spendings-capture">Результат:</p>
+      <div class="card">
+        <ul class="spendings-list" id="r-list">
+          <li>Собрано: <span><span id="r-perc">0</span>%</span></li>
+          <li>Осталось: <span><span id="r-cur">0</span> BYN</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="add_button" id="add_button"></div>
+  </div>
+  <div class="form-bg hidden" id="form">
+    <div class="wrapper">
+      <div class="card form">
+        <h3>Изменение суммы</h3>
+        <form>
+          <input type="number" step="0.01" autofocus placeholder="Сумма" id="input-Am">
+          <input type="text" placeholder="Комментарий" id="input-Com">
+          <div class="form__input_togler">
+            <p>Добавление</p>
+            <label class="switch">
+              <input type="checkbox" id="input-Change" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <input class="form_submit" type="submit" value="Добавить!" id="form-submit">
+        </form>
+        <div class="close_button" id="close_button"></div>
+      </div>
+    </div>
+  </div>
+  <div class="form-bg hidden" id="form-aim">
+    <div class="wrapper">
+      <div class="card form">
+        <h3>Добавление цели</h3>
+        <form>
+          <input type="number" step="0.01" placeholder="Сумма" id="a-input-Am" required>
+          <input type="text" placeholder="Комментарий" id="a-input-Com" required>
+          <input class="form_submit" type="submit" value="Добавить!" id="a-form-submit">
+        </form>
+        <div class="close_button" id="close_button"></div>
+      </div>
+    </div>
+  </div>
+  <!-- <script src="./src/index.js" type="module"></script> -->
+  <script src="main.js"></script>
+</body>
+</html>

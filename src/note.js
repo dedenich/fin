@@ -19,7 +19,7 @@ export class Note {
     commentDiv.textContent = this.comment;
     const amountDiv = document.createElement('div');
     amountDiv.classList.add('spendings-list__summa');
-    amountDiv.textContent = this.amount;
+    amountDiv.textContent = Number(this.amount).toFixed(2);
     const d = new Date();
     amountDiv.dataset.time = `${d.getDate()}.${d.getMonth() + 1}<br>${d.getHours()}:${d.getMinutes()}`;
     list.append(divSVG, commentDiv, amountDiv);
@@ -30,4 +30,18 @@ export class Note {
 export function createRender(amount, comment, change) {
   const a = new Note(amount, comment, change);
   a.render();
+  if (document.getElementById('n-stifle') !== null) {
+    document.getElementById('n-stifle').outerHTML = '';
+  }
+}
+
+export function createRenderLS(amount, comment, change) {
+  const a = new Note(amount, comment, change);
+  const spArr = JSON.parse(localStorage.getItem('spendings'));
+  spArr.push(a);
+  localStorage.setItem('spendings', JSON.stringify(spArr));
+  a.render();
+  if (document.getElementById('n-stifle') !== null) {
+    document.getElementById('n-stifle').outerHTML = '';
+  }
 }
